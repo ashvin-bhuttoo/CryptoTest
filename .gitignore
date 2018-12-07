@@ -1,3 +1,6 @@
 *.opendb
 CryptoTest/Debug/*
 ipch
+.vs
+*.db
+
