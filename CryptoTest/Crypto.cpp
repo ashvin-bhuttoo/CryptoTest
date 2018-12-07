@@ -3,6 +3,7 @@
 //CRYPTO CONFIGURATION PARAMETERS
 #define BIT_SHIFT 3
 #define XOR_KEY 0x3C
+#define ENABLE_XOR_VARIANCE true
 ////////////////////////////////
 
 int get_rs_mask(int shift)
@@ -102,10 +103,10 @@ void crypt(char* buf, int msg_len, bool decrypt = false)
 {
 	if (!decrypt)
 	{
-		shift_right(buf, msg_len, BIT_SHIFT);
+		//shift_right(buf, msg_len, BIT_SHIFT);
 		for (int k = 0; k < msg_len; k++)
 		{
-			buf[k] = buf[k] ^ XOR_KEY ^ k * 2;
+			buf[k] = buf[k] ^ XOR_KEY ^ k * (ENABLE_XOR_VARIANCE ? 2 : 0);
 		}
 		buf[msg_len] = '\0';
 	}
@@ -113,8 +114,8 @@ void crypt(char* buf, int msg_len, bool decrypt = false)
 	{
 		for (int k = 0; k < msg_len; k++)
 		{
-			buf[k] = buf[k] ^ XOR_KEY ^ k * 2;
+			buf[k] = buf[k] ^ XOR_KEY ^ k * (ENABLE_XOR_VARIANCE ? 2 : 0);
 		}
-		shift_left(buf, (msg_len)-1, BIT_SHIFT);
+		//shift_left(buf, (msg_len)-1, BIT_SHIFT);
 	}
 }

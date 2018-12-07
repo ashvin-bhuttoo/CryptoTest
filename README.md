@@ -8,5 +8,6 @@ void shift_left(char* buf, int msg_len, int shift)<br/>
 <b>Configuration parameters found in Crypto.cpp</b><br/>
 #define BIT_SHIFT 3<br/>
 #define XOR_KEY 0x3C<br/>
+#define ENABLE_XOR_VARIANCE true<br/>
 
-<b>Xor Encryption Key Changes for Each Character using Base Key 'XOR_KEY' and Character Position to add variance</b>
+<b>Xor Encryption Key Changes for Each Character using Base Key 'XOR_KEY' and Character Position to add variance when ENABLE_XOR_VARIANCE is true</b>
