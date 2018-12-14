@@ -39,13 +39,13 @@ void shift_right(char* buf, int msg_len, int shift)
 		if (k == 0)
 		{
 			tmp = buf[k];
-			buf[k] = buf[k] >> shift;
+			buf[k] >>= shift;
 		}
 		else
 		{
 			tmp2 = buf[k];
-			buf[k] = buf[k] >> shift;
-			buf[k] = buf[k] | ((tmp & get_rs_mask(shift)) << (8 - shift));
+			buf[k] >>= shift;
+			buf[k] |= ((tmp & get_rs_mask(shift)) << (8 - shift));
 
 			if (k != msg_len)
 				tmp = tmp2;
@@ -86,13 +86,13 @@ void shift_left(char* buf, int msg_len, int shift)
 		if (k == msg_len)
 		{
 			tmp = buf[k];
-			buf[k] = buf[k] << shift;
+			buf[k] <<= shift;
 		}
 		else
 		{
 			tmp2 = buf[k];
-			buf[k] = buf[k] << shift;
-			buf[k] = buf[k] | ((tmp & get_ls_mask(shift)) >> (8 - shift));
+			buf[k] <<= shift;
+			buf[k] |= ((tmp & get_ls_mask(shift)) >> (8 - shift));
 
 			tmp = tmp2;
 		}
