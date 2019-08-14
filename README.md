@@ -11,3 +11,6 @@ void shift_left(char* buf, int msg_len, int shift)<br/>
 #define ENABLE_XOR_VARIANCE true<br/>
 
 <b>Xor Encryption Key Changes for Each Character using Base Key 'XOR_KEY' and Character Position to add variance when ENABLE_XOR_VARIANCE is true</b>
+
+If you want to buy me a beer, here's the button for it.. :)<br/>
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/ABhuttoo?locale.x=en_US)
